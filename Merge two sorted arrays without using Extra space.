@@ -1,0 +1,73 @@
+# coding_-lub
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[100],b[100],c[100],n,i,j,m,k,d,g;
+    printf("No.of element in a:");
+    scanf("%d",&n); 
+    printf("Array a:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("No.of element in b:");
+    scanf("%d",&m); 
+    printf("Array b:");
+    for(i=0;i<m;i++)
+    {
+        scanf("%d",&b[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        c[i]=a[i];
+        
+    }
+    k=i;
+    for(i=0;i<m;i++)
+    {
+       c[k]=b[i];
+       k++;
+    }
+    
+    
+    printf("\n");
+    for(i=0;i<k;i++)
+    {
+        for(j=i+1;j<k;j++)
+        {
+            if(c[i]>c[j])
+            {
+              d=c[i];
+              c[i]=c[j];
+              c[j]=d; 
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        a[i]=c[i];
+    }
+    g=i;
+    for(i=0;i<m;i++)
+    {
+        b[i]=c[g];
+        g++;
+    }
+    printf("\narray a:");
+    for(i=0;i<n;i++)
+     {
+         printf("\t%d",a[i]);
+     }
+     printf("\narray b:");
+    for(i=0;i<m;i++)
+     {
+         printf("\t%d",b[i]);
+     }
+      
+ 
+    
+    
+    return 0;
+}
